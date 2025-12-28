@@ -14,6 +14,7 @@ import Footer from '@/components/Footer';
 import FloatingElements from '@/components/FloatingElements';
 import { DecorativeFrame, AnimatedDoubleHappiness, RibbonBanner } from '@/components/Decorations';
 import { ScrollHint } from '@/components/ScrollHint';
+import BackgroundMusic from '@/components/BackgroundMusic';
 import { weddingData } from '@/data/wedding';
 
 // Scroll animation wrapper với nhiều effect
@@ -101,6 +102,9 @@ export default function Home() {
 
   return (
     <>
+      {/* Background Music - autoplay */}
+      {isOpened && <BackgroundMusic />}
+      
       {/* Scroll Progress Bar */}
       {isOpened && <ScrollProgress />}
       
