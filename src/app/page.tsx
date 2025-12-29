@@ -98,7 +98,9 @@ export default function Home() {
     // Play music immediately on user interaction
     if (audioRef.current) {
       audioRef.current.volume = 0.5;
-      audioRef.current.play().catch(err => console.log('Audio play failed:', err));
+      audioRef.current.play().catch(err => {
+        console.log('Audio play failed (nhạc cần file MP3 thật, hiện tại file placeholder):', err);
+      });
     }
   };
 

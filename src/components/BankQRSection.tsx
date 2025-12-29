@@ -138,7 +138,7 @@ function BankCard({
 
         {/* Nút chuyển khoản nhanh */}
         <motion.a
-          href={`https://dl.vietqr.io/pay?app=bank&ba=${account.bankBin}-${account.accountNumber}-${encodeURIComponent(account.accountName)}`}
+          href={`https://dl.vietqr.io/pay?app=momo&bank=${account.bankBin}&acc=${account.accountNumber}&amount=&note=Mung%20cuoi`}
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
