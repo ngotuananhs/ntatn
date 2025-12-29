@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import OpeningScreen from '@/components/OpeningScreen';
 import HeroSection from '@/components/HeroSection';
@@ -14,7 +14,6 @@ import Footer from '@/components/Footer';
 import FloatingElements from '@/components/FloatingElements';
 import { DecorativeFrame, AnimatedDoubleHappiness, RibbonBanner } from '@/components/Decorations';
 import { ScrollHint } from '@/components/ScrollHint';
-import BackgroundMusic from '@/components/BackgroundMusic';
 import { weddingData } from '@/data/wedding';
 
 // Scroll animation wrapper với nhiều effect
@@ -92,6 +91,16 @@ function ScrollProgress() {
 
 export default function Home() {
   const [isOpened, setIsOpened] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const handleOpenInvitation = () => {
+    setIsOpened(true);
+    // Play music immediately on user interaction
+    if (audioRef.current) {
+      audioRef.current.volume = 0.5;
+      audioRef.current.play().catch(err => console.log('Audio play failed:', err));
+    }
+  };
 
   // Target date for countdown
   const weddingDate = new Date(
@@ -102,8 +111,8 @@ export default function Home() {
 
   return (
     <>
-      {/* Background Music - autoplay */}
-      {isOpened && <BackgroundMusic />}
+      {/* Background Music */}
+      <audio ref={audioRef} src="/nhac.mp3" loop preload="auto" style={{ display: 'none' }} />
       
       {/* Scroll Progress Bar */}
       {isOpened && <ScrollProgress />}
@@ -115,7 +124,7 @@ export default function Home() {
           brideName={weddingData.bride.name}
           date={weddingData.wedding.date}
           lunarDate={weddingData.wedding.lunarDate}
-          onOpen={() => setIsOpened(true)}
+          onOpen={handleOpenInvitation}
         />
       )}
 
