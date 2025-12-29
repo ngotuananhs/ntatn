@@ -12,7 +12,7 @@ export const weddingData = {
     fullName: "Hoàng Doãn Thái - Thảo Nguyên",
     father: "Hoàng Doãn Thái",
     mother: "Chu Thuý Vân",
-    address: "Xóm Đồng Chân - Xã Phú Lương - Tỉnh Thái Nguyên"
+    address: "Xóm Đồng Chằm - Xã Phú Lương - Tỉnh Thái Nguyên"
   },
   
   // Thông tin đám cưới
@@ -36,11 +36,12 @@ export const weddingData = {
   
   // Tiệc nhà gái
   brideCeremony: {
-    title: "Tiệc Mừng Lễ Thành Hôn",
-    venue: "Sân Trường Tiểu Học Vô Tranh",
-    address: "Xóm 7 Liên Hồng - Vô Tranh - Phú Lương - Thái Nguyên",
-    time: "",
-    date: "10.01.2026"
+    title: "Lễ Vu Quy",
+    venue: "Tư Gia Nhà Gái",
+    address: "Xóm Đồng Chằm - Xã Phú Lương - Tỉnh Thái Nguyên",
+    time: "16 giờ 30",
+    date: "09.01.2026",
+    lunarDate: "21 tháng 11 năm Ất Tỵ"
   },
   
   // Thông điệp

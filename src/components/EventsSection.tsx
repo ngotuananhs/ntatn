@@ -19,6 +19,7 @@ interface EventsSectionProps {
     address: string;
     time: string;
     date: string;
+    lunarDate?: string;
   };
   wedding: {
     dayOfWeek: string;
@@ -63,8 +64,8 @@ export default function EventsSection({ groomCeremony, brideCeremony, wedding }:
             address={brideCeremony.address}
             time={brideCeremony.time}
             date={brideCeremony.date}
-            dayOfWeek={wedding.dayOfWeek}
-            lunarDate={wedding.lunarDate}
+            dayOfWeek="Thứ Năm"
+            lunarDate={brideCeremony.lunarDate || wedding.lunarDate}
             side="bride"
           />
         </div>
