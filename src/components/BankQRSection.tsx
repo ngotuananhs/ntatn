@@ -66,6 +66,21 @@ function BankCard({
     }
   };
 
+  // Xử lý chuyển khoản - mở QR hoặc copy số tài khoản
+  const handleTransfer = () => {
+    // Trên mobile: suggest copy số tài khoản
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      copyToClipboard();
+      alert('Đã copy số tài khoản! Vui lòng mở app ngân hàng để chuyển khoản.');
+    } else {
+      // Desktop: mở link VietQR (fallback)
+      window.open(
+        `https://img.vietqr.io/image/${account.bankBin}-${account.accountNumber}-compact2.jpg?amount=&addInfo=Mung cuoi&accountName=${encodeURIComponent(account.accountName)}`,
+        '_blank'
+      );
+    }
+  };
+
   const personData = person === 'groom' ? weddingData.groom : weddingData.bride;
 
   return (
@@ -137,17 +152,15 @@ function BankCard({
         </div>
 
         {/* Nút chuyển khoản nhanh */}
-        <motion.a
-          href={`https://dl.vietqr.io/pay?app=momo&bank=${account.bankBin}&acc=${account.accountNumber}&amount=&note=Mung%20cuoi`}
-          target="_blank"
-          rel="noopener noreferrer"
+        <motion.button
+          onClick={handleTransfer}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className="flex items-center justify-center gap-2 w-full py-2.5 mt-3 bg-[#c41e3a] hover:bg-[#a01830] text-white text-sm font-medium rounded-xl transition-colors shadow-md"
         >
           <ExternalLink className="w-4 h-4" />
-          Chuyển khoản ngay
-        </motion.a>
+          {copied ? 'Đã copy số TK!' : 'Chuyển khoản ngay'}
+        </motion.button>
       </div>
     </motion.div>
   );
