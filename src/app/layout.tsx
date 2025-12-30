@@ -11,12 +11,14 @@ export const metadata: Metadata = {
     title: "💒 Tuấn Anh ♡ Thảo Nguyên | 10.01.2026",
     description: "Trân trọng kính mời Quý vị đến dự lễ thành hôn của chúng tôi. Sự hiện diện của Quý vị là niềm vinh hạnh cho gia đình chúng tôi! 💍✨",
     type: "website",
+    url: "https://thiepcuoionline.vercel.app",
     images: [
       {
-        url: "/images/BBB02315.jpg",
+        url: "https://thiepcuoionline.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Tuấn Anh & Thảo Nguyên - Thiệp Cưới",
+        type: "image/jpeg",
       },
     ],
     locale: "vi_VN",
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "💒 Tuấn Anh ♡ Thảo Nguyên | 10.01.2026",
     description: "Trân trọng kính mời Quý vị đến dự lễ thành hôn của chúng tôi 💍✨",
-    images: ["/images/BBB02315.jpg"],
+    images: ["https://thiepcuoionline.vercel.app/og-image.jpg"],
   },
   icons: {
     icon: "/favicon.svg",
