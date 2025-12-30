@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://thiepcuoionline.vercel.app/og-image.jpg",
-        width: 1200,
-        height: 630,
+        width: 1301,
+        height: 1920,
         alt: "Tuấn Anh & Thảo Nguyên - Thiệp Cưới",
         type: "image/jpeg",
       },
