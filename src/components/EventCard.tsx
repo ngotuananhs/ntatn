@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { MapPin, Clock, Calendar } from 'lucide-react';
+import { MapPin, Clock, Calendar, Navigation } from 'lucide-react';
 
 interface EventCardProps {
   title: string;
@@ -14,11 +14,18 @@ interface EventCardProps {
   dayOfWeek: string;
   lunarDate: string;
   side: 'groom' | 'bride';
+  mapsUrl?: string;
 }
 
-export default function EventCard({ title, venue, address, time, date, dayOfWeek, lunarDate, side }: EventCardProps) {
+export default function EventCard({ title, venue, address, time, date, dayOfWeek, lunarDate, side, mapsUrl }: EventCardProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  const handleOpenMaps = () => {
+    if (mapsUrl) {
+      window.open(mapsUrl, '_blank');
+    }
+  };
 
   return (
     <motion.div
@@ -78,6 +85,19 @@ export default function EventCard({ title, venue, address, time, date, dayOfWeek
         <div className="mt-3 pt-3 border-t border-[#c9a962]/20 text-center">
           <p className="text-sm text-[#9b7b5b] italic">Tức ngày {lunarDate}</p>
         </div>
+
+        {/* Google Maps button */}
+        {mapsUrl && (
+          <motion.button
+            onClick={handleOpenMaps}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="mt-4 w-full flex items-center justify-center gap-2 py-2.5 bg-[#c41e3a] hover:bg-[#a01830] text-white rounded-xl transition-colors shadow-md"
+          >
+            <Navigation className="w-4 h-4" />
+            <span className="font-elegant text-sm">Xem bản đồ</span>
+          </motion.button>
+        )}
       </div>
     </motion.div>
   );

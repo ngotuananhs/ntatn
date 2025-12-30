@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Heart, Sparkles } from 'lucide-react';
 import { ScrollHint } from './ScrollHint';
+import { useState, useEffect } from 'react';
 
 interface HeroSectionProps {
   groomName: string;
@@ -10,9 +11,79 @@ interface HeroSectionProps {
   date: string;
   lunarDate?: string;
   monogram: string;
+  weddingDate: Date;
 }
 
-export default function HeroSection({ groomName, brideName, date, lunarDate, monogram }: HeroSectionProps) {
+// Countdown Timer Component
+function CountdownTimer({ targetDate }: { targetDate: Date }) {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date().getTime();
+      const target = targetDate.getTime();
+      const difference = target - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000)
+        });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timer);
+  }, [targetDate]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 1 }}
+      className="flex justify-center gap-3 mt-6"
+    >
+      {[
+        { value: timeLeft.days, label: 'Ngày' },
+        { value: timeLeft.hours, label: 'Giờ' },
+        { value: timeLeft.minutes, label: 'Phút' },
+        { value: timeLeft.seconds, label: 'Giây' }
+      ].map((item, index) => (
+        <motion.div
+          key={item.label}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.2 + index * 0.1 }}
+          className="flex flex-col items-center"
+        >
+          <motion.div
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 1, repeat: Infinity, delay: index * 0.2 }}
+            className="w-14 h-14 flex items-center justify-center bg-white/80 border border-[#c9a962]/30 rounded-lg shadow-md"
+          >
+            <span className="text-2xl font-elegant font-bold text-[#c41e3a]">
+              {item.value.toString().padStart(2, '0')}
+            </span>
+          </motion.div>
+          <span className="text-xs text-[#9b7b5b] mt-1 font-elegant">{item.label}</span>
+        </motion.div>
+      ))}
+    </motion.div>
+  );
+}
+
+export default function HeroSection({ groomName, brideName, date, lunarDate, monogram, weddingDate }: HeroSectionProps) {
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden bg-pattern">
       {/* Animated background circles */}
@@ -172,7 +243,7 @@ export default function HeroSection({ groomName, brideName, date, lunarDate, mon
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mb-12"
+          className="mb-6"
         >
           <motion.div 
             className="inline-block border border-[#c9a962]/50 px-8 py-4 relative"
@@ -191,7 +262,12 @@ export default function HeroSection({ groomName, brideName, date, lunarDate, mon
           </motion.div>
         </motion.div>
 
-        <ScrollHint />
+        {/* Countdown Timer */}
+        <CountdownTimer targetDate={weddingDate} />
+
+        <div className="mt-12">
+          <ScrollHint />
+        </div>
       </div>
     </section>
   );

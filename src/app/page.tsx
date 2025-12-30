@@ -143,6 +143,7 @@ export default function Home() {
             date={weddingData.wedding.date}
             lunarDate={weddingData.wedding.lunarDate}
             monogram={weddingData.monogram.letters}
+            weddingDate={weddingDate}
           />
           <div className="flex justify-center -mt-6">
             <ScrollHint />

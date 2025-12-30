@@ -31,7 +31,8 @@ export const weddingData = {
     venue: "Tư Gia Nhà Trai",
     address: "Xóm 7 Liên Hồng - Vô Tranh - Phú Lương - Thái Nguyên",
     time: "09 giờ 30",
-    date: "10.01.2026"
+    date: "10.01.2026",
+    mapsUrl: "https://maps.app.goo.gl/phuluong-vothanh-thai-nguyen" // Thay bằng link thực
   },
   
   // Tiệc nhà gái
@@ -41,7 +42,8 @@ export const weddingData = {
     address: "Xóm Đồng Chằm - Xã Phú Lương - Tỉnh Thái Nguyên",
     time: "16 giờ 30",
     date: "09.01.2026",
-    lunarDate: "21 tháng 11 năm Ất Tỵ"
+    lunarDate: "21 tháng 11 năm Ất Tỵ",
+    mapsUrl: "https://maps.app.goo.gl/dongcham-phuluong-thai-nguyen" // Thay bằng link thực
   },
   
   // Thông điệp
