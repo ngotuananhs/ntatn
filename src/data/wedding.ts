@@ -32,7 +32,8 @@ export const weddingData = {
     address: "Xóm 7 Liên Hồng - Vô Tranh - Phú Lương - Thái Nguyên",
     time: "09 giờ 30",
     date: "10.01.2026",
-    mapsUrl: "https://maps.app.goo.gl/phuluong-vothanh-thai-nguyen" // Thay bằng link thực
+    mapsUrl: "https://maps.app.goo.gl/Z4sADbRjDEWJosMS8",
+    embedUrl: "https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d231.71852137052832!2d105.7622925751557!3d21.68344145987334!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1svi!2s!4v1767148087447!5m2!1svi!2s"
   },
   
   // Tiệc nhà gái
@@ -43,7 +44,7 @@ export const weddingData = {
     time: "16 giờ 30",
     date: "09.01.2026",
     lunarDate: "21 tháng 11 năm Ất Tỵ",
-    mapsUrl: "https://maps.app.goo.gl/dongcham-phuluong-thai-nguyen" // Thay bằng link thực
+    mapsUrl: "https://maps.app.goo.gl/y5JuyiXLw9PtXcon7"
   },
   
   // Thông điệp

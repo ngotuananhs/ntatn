@@ -13,6 +13,7 @@ interface EventsSectionProps {
     time: string;
     date: string;
     mapsUrl?: string;
+    embedUrl?: string;
   };
   brideCeremony: {
     title: string;
@@ -22,6 +23,7 @@ interface EventsSectionProps {
     date: string;
     lunarDate?: string;
     mapsUrl?: string;
+    embedUrl?: string;
   };
   wedding: {
     dayOfWeek: string;
@@ -59,6 +61,7 @@ export default function EventsSection({ groomCeremony, brideCeremony, wedding }:
             lunarDate={wedding.lunarDate}
             side="groom"
             mapsUrl={groomCeremony.mapsUrl}
+            embedUrl={groomCeremony.embedUrl}
           />
           
           <EventCard
@@ -71,6 +74,7 @@ export default function EventsSection({ groomCeremony, brideCeremony, wedding }:
             lunarDate={brideCeremony.lunarDate || wedding.lunarDate}
             side="bride"
             mapsUrl={brideCeremony.mapsUrl}
+            embedUrl={brideCeremony.embedUrl}
           />
         </div>
       </div>

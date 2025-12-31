@@ -187,15 +187,6 @@ export default function Home() {
                 wedding={weddingData.wedding}
               />
             </ScrollSection>
-            {/* Mini Calendar buttons */}
-            <ScrollSection variant="fadeUp">
-              <AddToCalendar
-                eventTitle={`Lễ cưới ${weddingData.groom.name} & ${weddingData.bride.name}`}
-                eventDate={weddingDate}
-                eventLocation={weddingData.groomCeremony.address}
-                eventDescription={`Trân trọng kính mời bạn đến dự lễ thành hôn của ${weddingData.groom.name} và ${weddingData.bride.name}`}
-              />
-            </ScrollSection>
             <div className="flex justify-center mt-2 mb-1">
               <ScrollHint />
             </div>
@@ -212,6 +203,15 @@ export default function Home() {
               <RSVPSection
                 groomName={weddingData.groom.name}
                 brideName={weddingData.bride.name}
+              />
+            </ScrollSection>
+            {/* Mini Calendar buttons - moved below RSVP */}
+            <ScrollSection variant="fadeUp">
+              <AddToCalendar
+                eventTitle={`Lễ cưới ${weddingData.groom.name} & ${weddingData.bride.name}`}
+                eventDate={weddingDate}
+                eventLocation={weddingData.groomCeremony.address}
+                eventDescription={`Trân trọng kính mời bạn đến dự lễ thành hôn của ${weddingData.groom.name} và ${weddingData.bride.name}`}
               />
             </ScrollSection>
             <div className="flex justify-center mt-4">
