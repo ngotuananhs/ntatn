@@ -18,23 +18,21 @@ export default function GallerySection({ groomName, brideName }: GallerySectionP
   // Sắp xếp ảnh logic: ảnh đẹp nhất đầu, xen kẽ portrait/landscape
   const galleryImages = [
     // Ảnh nổi bật - ảnh cặp đôi chính
-    { id: 1, src: '/images/20x30 gỗ cán mờ.jpg', alt: 'Ảnh cưới chính', span: 'col-span-2', aspect: 'aspect-[16/10]' },
+    { id: 1, src: '/images/20x30 gỗ cán mờ (2).webp', alt: 'Ảnh cưới chính', span: 'col-span-2', aspect: 'aspect-[16/10]' },
     // Hàng 2: 2 ảnh vuông
-    { id: 2, src: '/images/BBB01278.JPG', alt: 'Khoảnh khắc lãng mạn', span: '', aspect: 'aspect-square' },
-    { id: 3, src: '/images/BBB01565.jpg', alt: 'Nụ cười hạnh phúc', span: '', aspect: 'aspect-square' },
+    { id: 2, src: '/images/IMG_7438.webp', alt: 'Khoảnh khắc lãng mạn', span: '', aspect: 'aspect-square' },
+    { id: 3, src: '/images/IMG_7447.webp', alt: 'Nụ cười hạnh phúc', span: '', aspect: 'aspect-square' },
     // Ảnh dọc nổi bật
-    { id: 4, src: '/images/BBB01717.jpg', alt: 'Ánh mắt yêu thương', span: 'row-span-2', aspect: 'aspect-[3/4]' },
-    { id: 5, src: '/images/BBB01883.jpg', alt: 'Bên nhau trọn đời', span: '', aspect: 'aspect-square' },
-    { id: 6, src: '/images/BBB01895.jpg', alt: 'Kỷ niệm ngọt ngào', span: '', aspect: 'aspect-square' },
+    { id: 4, src: '/images/P8964.webp', alt: 'Ánh mắt yêu thương', span: 'row-span-2', aspect: 'aspect-[3/4]' },
+    { id: 5, src: '/images/IMG_7500.webp', alt: 'Bên nhau trọn đời', span: '', aspect: 'aspect-square' },
+    { id: 6, src: '/images/IMG_7507.webp', alt: 'Kỷ niệm ngọt ngào', span: '', aspect: 'aspect-square' },
     // Ảnh rộng
-    { id: 7, src: '/images/20x30 gỗ cán mờ (3).jpg', alt: 'Tình yêu vĩnh cửu', span: 'col-span-2', aspect: 'aspect-[16/10]' },
+    { id: 7, src: '/images/BBB02366.webp', alt: 'Tình yêu vĩnh cửu', span: 'col-span-2', aspect: 'aspect-[16/10]' },
     // Hàng cuối
-    { id: 8, src: '/images/BBB01987.jpg', alt: 'Ngày trọng đại', span: '', aspect: 'aspect-square' },
-    { id: 9, src: '/images/BBB02110.jpg', alt: 'Hạnh phúc viên mãn', span: '', aspect: 'aspect-square' },
-    { id: 10, src: '/images/BBB02315.jpg', alt: 'Cùng nhau đi qua', span: '', aspect: 'aspect-square' },
-    { id: 11, src: '/images/BBB02481-Recovered.jpg', alt: 'Giây phút thiêng liêng', span: '', aspect: 'aspect-square' },
-    // Ảnh kết - panorama
-    { id: 12, src: '/images/P1181964.jpg', alt: 'Chuyện tình đẹp', span: 'col-span-2', aspect: 'aspect-[16/9]' },
+    { id: 8, src: '/images/IMG_7839.webp', alt: 'Ngày trọng đại', span: '', aspect: 'aspect-square' },
+    { id: 9, src: '/images/BBB0537.webp', alt: 'Hạnh phúc viên mãn', span: '', aspect: 'aspect-square' },
+    { id: 10, src: '/images/P8226.webp', alt: 'Cùng nhau đi qua', span: '', aspect: 'aspect-square' },
+    { id: 11, src: '/images/P8753.webp', alt: 'Giây phút thiêng liêng', span: '', aspect: 'aspect-square' },
   ];
 
   const openLightbox = (index: number) => setSelectedImage(index);
