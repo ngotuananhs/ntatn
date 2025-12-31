@@ -40,3 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 public/images_backup_*
+
+# backup archives
+*.tar.gz
+*.zip
